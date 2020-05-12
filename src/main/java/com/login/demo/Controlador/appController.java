@@ -18,7 +18,6 @@ public class appController {
 	@GetMapping("/dashboard")
 	public String getDashboard(@AuthenticationPrincipal customSecurityUser usuario, ModelMap model){
 		String ruta="";
-		System.out.println(usuario);
 		model.put("usuario", usuario);
 		Set<Authorities> Lista=new HashSet<>();
 		Lista=usuario.getAuthorities();
@@ -26,7 +25,7 @@ public class appController {
 		Authorities auth=(Authorities)it.next();
 		if(auth.getAuthority().equals("ROLE_ADMIN"))
 			ruta="dashboardadmin";
-		else if(auth.getAuthority().equals("ROLE_USUARIO"))
+		else if(auth.getAuthority().equals("ROLE_USER"))
 			ruta="dashboarduser";
 		return ruta;
 	}

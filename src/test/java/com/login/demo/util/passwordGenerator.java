@@ -9,7 +9,7 @@ public class passwordGenerator {
 		// TODO Auto-generated method stub
 		PasswordEncoder passwordEncoder=new BCryptPasswordEncoder();
 		
-		System.out.println(passwordEncoder.encode("chepe123"));
+		System.out.println(passwordEncoder.encode("123"));
 	}
 
 }
